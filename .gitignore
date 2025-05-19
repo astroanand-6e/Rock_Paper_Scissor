@@ -31,3 +31,6 @@ yarn-error.log*
 .cache/
 
 *.png
+
+New_Implementation_plan.md
+SUBMISSION.md
