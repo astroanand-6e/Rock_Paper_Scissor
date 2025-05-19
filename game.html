@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2e7d32">
+    <link rel="icon" href="icons/icon-192x192.png" type="image/png">
+</head>
+<body>
+    <div class="game-wrapper">
+        <div class="container">
+            <header class="game-header">
+                <h1>Rock Paper Scissors!</h1>
+                <div class="game-info">
+                    <div id="game-mode">Best of <span id="total-rounds">3</span></div>
+                    <div id="current-round">Round <span id="round-number">1</span></div>
+                </div>
+            </header>
+            
+            <div class="game-container">
+                <div class="scoreboard">
+                    <div class="player-stats">
+                        <h3>You</h3>
+                        <div class="score" id="player-score">0</div>
+                    </div>
+
+                    <div class="vs">VS</div>
+
+                    <div class="computer-stats">
+                        <h3>Computer</h3>
+                        <div class="score" id="computer-score">0</div>
+                    </div>
+                </div>
+
+                <div class="game-info-panel">
+                    <div id="countdown" class="countdown"></div>
+                    <div id="status" class="status-message">Choose your move and start the round!</div>
+                    <div id="result" class="round-result" style="display: none;"></div>
+                    
+                    <div class="action-controls">
+                        <button id="start-btn" class="game-btn primary-btn" disabled>Start Round</button>
+                        <button id="reset-btn" class="game-btn option-btn">Reset Score</button>
+                        <a href="index.html" class="game-btn option-btn">Back to Menu</a>
+                    </div>
+                </div>
+
+                <div class="game-area">
+                    <div class="player-section">
+                        <h3 class="section-title">Your Move</h3>
+                        <div class="move-preview">
+                            <img id="player-preview" src="assets/images/question.png" alt="Your choice" class="preview-img">
+                        </div>
+                        <div class="move-display">
+                            <div class="move-title">Your Move:</div>
+                            <div class="move" id="player-move">Choose below</div>
+                        </div>
+                        <div class="gesture-buttons">
+                            <button class="gesture-btn" data-gesture="rock">
+                                <img src="assets/images/Rock_HG.png" alt="Rock" class="gesture-img hand-gesture">
+                                <span>Rock</span>
+                            </button>
+                            <button class="gesture-btn" data-gesture="paper">
+                                <img src="assets/images/paper_HG.png" alt="Paper" class="gesture-img hand-gesture">
+                                <span>Paper</span>
+                            </button>
+                            <button class="gesture-btn" data-gesture="scissors">
+                                <img src="assets/images/Scissor_HG.png" alt="Scissors" class="gesture-img hand-gesture">
+                                <span>Scissors</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="computer-section">
+                        <h3 class="section-title">Computer's Move</h3>
+                        <div class="computer-move-container">
+                            <img id="computer-move-display" src="assets/images/rsp_computer.gif" alt="Computer's choice" class="preview-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Over Modal -->
+            <div id="game-over-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2 id="modal-title">Game Result</h2>
+                    <div id="final-result" class="final-result"></div>
+                    <div class="modal-controls">
+                        <button id="play-again-btn" class="game-btn primary-btn">Play Again</button>
+                        <a href="index.html" class="game-btn option-btn">Back to Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load game scripts -->
+    <script src="js/previewHandler.js"></script>
+    <script src="js/gameLogic.js"></script>
+</body>
+</html>

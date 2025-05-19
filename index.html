@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2e7d32">
+    <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="sticky-cta-container reveal-on-scroll">
+        <button id="play-btn-sticky" class="primary-btn">Start Challenge</button>
+    </div>
+
+    <div class="floating-elements">
+        <!-- Floating elements will be added dynamically via JavaScript -->
+    </div>
+
+    <div class="landing-container">
+        <header class="hero-section">
+            <h1>Rock Paper Scissors!</h1>
+            <p class="tagline">Classic Game, Modern Style!</p>
+        </header>
+
+        <section class="rules-section reveal-on-scroll">
+            <h3>How to Play: The Rules of Engagement</h3>
+            <div class="rules-visual">
+                <div class="rule-row">
+                    <div class="rule-comparison">
+                        <img src="assets/images/Scissor_HG.png" alt="Scissors Hand Gesture" class="hand-gesture-img">
+                        <span class="vs-text">vs.</span>
+                        <img src="assets/images/paper_HG.png" alt="Paper Hand Gesture" class="hand-gesture-img">
+                    </div>
+                    <span class="arrow-text">➞</span>
+                    <div class="rule-winner">
+                        <img src="assets/images/Scissor_HG.png" alt="Scissors Hand Gesture" class="hand-gesture-img">
+                        <span class="wins-text">Wins</span>
+                    </div>
+                </div>
+                <div class="rule-row">
+                    <div class="rule-comparison">
+                        <img src="assets/images/paper_HG.png" alt="Paper Hand Gesture" class="hand-gesture-img">
+                        <span class="vs-text">vs.</span>
+                        <img src="assets/images/Rock_HG.png" alt="Rock Hand Gesture" class="hand-gesture-img">
+                    </div>
+                    <span class="arrow-text">➞</span>
+                    <div class="rule-winner">
+                        <img src="assets/images/paper_HG.png" alt="Paper Hand Gesture" class="hand-gesture-img">
+                        <span class="wins-text">Wins</span>
+                    </div>
+                </div>
+                <div class="rule-row">
+                    <div class="rule-comparison">
+                        <img src="assets/images/Rock_HG.png" alt="Rock Hand Gesture" class="hand-gesture-img">
+                        <span class="vs-text">vs.</span>
+                        <img src="assets/images/Scissor_HG.png" alt="Scissors Hand Gesture" class="hand-gesture-img">
+                    </div>
+                    <span class="arrow-text">➞</span>
+                    <div class="rule-winner">
+                        <img src="assets/images/Rock_HG.png" alt="Rock Hand Gesture" class="hand-gesture-img">
+                        <span class="wins-text">Wins</span>
+                    </div>
+                </div>
+            </div>
+            <ol class="gameplay-steps">
+                <li>Choose Rock, Paper, or Scissors by clicking the respective button.</li>
+                <li>Click "Start Round" to see the computer's choice.</li>
+                <li>Win rounds to increase your score and beat the computer!</li>
+                <li>First to win the selected number of rounds wins the game!</li>
+            </ol>
+        </section>
+
+        <section class="game-options reveal-on-scroll">
+            <h3>Select Game Mode</h3>
+            <div class="options-buttons">
+                <button id="best-of-3" class="option-btn active">Best of 3</button>
+                <button id="best-of-5" class="option-btn">Best of 5</button>
+                <div class="custom-option">
+                    <label for="custom-rounds">Custom:</label>
+                    <input type="number" id="custom-rounds" min="1" max="15" value="3">
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-container reveal-on-scroll">
+            <button id="play-btn" class="primary-btn">Start Challenge</button>
+        </div>
+    </div>
+
+    <script src="js/landing.js"></script>
+</body>
+</html>

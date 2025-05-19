@@ -1,0 +1,35 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    
+    - name: Install dependencies
+      run: |
+        npm install -g svgexport
+
+    - name: Convert SVG to PNG
+      run: |
+        svgexport icons/icon-192x192.svg icons/icon-192x192.png 192:192
+        svgexport icons/icon-512x512.svg icons/icon-512x512.png 512:512
+      
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: .
+        branch: gh-pages
