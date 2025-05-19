@@ -56,7 +56,7 @@ npx live-server
 
 ## Hosting
 
-This project can be deployed to any static site hosting service such as:
+<!-- This project can be deployed to any static site hosting service such as:
 - GitHub Pages
 - Netlify
 - Vercel
@@ -84,7 +84,7 @@ This project was designed to meet the hackathon judging criteria:
 ### Code Quality
 - Modular code organization
 - Clear separation of concerns
-- Well-commented code for maintainability
+- Well-commented code for maintainability -->
 
 ## Future Improvements
 
