@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,18 @@
     <meta name="theme-color" content="#2e7d32">
     <link rel="icon" href="icons/icon-192x192.png" type="image/png">
 </head>
+
 <body>
     <div class="game-wrapper">
         <div class="container">
             <header class="game-header">
-                <h1>Rock Paper Scissors!</h1>
+                <h1>Rock Paper Scissor GRID</h1>
                 <div class="game-info">
                     <div id="game-mode">Best of <span id="total-rounds">3</span></div>
                     <div id="current-round">Round <span id="round-number">1</span></div>
                 </div>
             </header>
-            
+
             <div class="game-container">
                 <div class="scoreboard">
                     <div class="player-stats">
@@ -41,7 +43,7 @@
                     <div id="countdown" class="countdown"></div>
                     <div id="status" class="status-message">Choose your move and start the round!</div>
                     <div id="result" class="round-result" style="display: none;"></div>
-                    
+
                     <div class="action-controls">
                         <button id="start-btn" class="game-btn primary-btn" disabled>Start Round</button>
                         <button id="reset-btn" class="game-btn option-btn">Reset Score</button>
@@ -53,7 +55,14 @@
                     <div class="player-section">
                         <h3 class="section-title">Your Move</h3>
                         <div class="move-preview">
-                            <img id="player-preview" src="assets/images/question.png" alt="Your choice" class="preview-img">
+                            <div id="camera-container"
+                                style="position: relative; width: 300px; height: 225px; margin: 0 auto;">
+                                <video id="input-video" style="display: none;"></video>
+                                <canvas id="output-canvas" width="300" height="225"
+                                    style="width: 100%; height: 100%; border-radius: 10px;"></canvas>
+                                <img id="player-preview" src="assets/images/question.png" alt="Your choice"
+                                    class="preview-img" style="display: none;">
+                            </div>
                         </div>
                         <div class="move-display">
                             <div class="move-title">Your Move:</div>
@@ -78,7 +87,12 @@
                     <div class="computer-section">
                         <h3 class="section-title">Computer's Move</h3>
                         <div class="computer-move-container">
-                            <img id="computer-move-display" src="assets/images/rsp_computer.gif" alt="Computer's choice" class="preview-img">
+                            <img id="computer-move-display" src="assets/images/rsp_computer.gif" alt="Computer's choice"
+                                class="preview-img">
+                        </div>
+                        <div class="move-display">
+                            <div class="move-title">Computer Chose:</div>
+                            <div class="move" id="computer-move-text">Waiting...</div>
                         </div>
                     </div>
                 </div>
@@ -98,8 +112,18 @@
         </div>
     </div>
 
+    <!-- MediaPipe Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
     <!-- Load game scripts -->
+    <script src="js/handDetection.js"></script>
     <script src="js/previewHandler.js"></script>
     <script src="js/gameLogic.js"></script>
 </body>
+
 </html>

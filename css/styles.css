@@ -1,24 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 :root {
-    /* Light Mode Color Scheme */
-    --primary-color: #5856D6; /* Vibrant purple that works well with game assets */
-    --secondary-color: #7E78FF; /* Lighter purple for secondary elements */
-    --accent-color: #FF2D55; /* Bright pink for accents/highlights */
-    --background-color: #F8F9FA; /* Light gray background */
-    --surface-color: #FFFFFF; /* Pure white for surface elements */
-    --text-primary: #212529; /* Dark gray for primary text */
-    --text-secondary: #495057; /* Medium gray for secondary text */
-    --success-color: #34C759; /* Green for success states */
-    --error-color: #FF3B30; /* Red for error states */
-    --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle shadows */
+    /* Tron Ares Theme Color Scheme */
+    --primary-color: #00f2ff;
+    /* Neon Blue */
+    --secondary-color: #00aaff;
+    /* Deep Neon Blue */
+    --accent-color: #ff0033;
+    /* Neon Red */
+    --background-color: #050505;
+    /* Deep Black */
+    --surface-color: rgba(0, 242, 255, 0.03);
+    /* Glassmorphism surface with blue tint */
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --success-color: #00f2ff;
+    --error-color: #ff0033;
+    --shadow-color: rgba(0, 242, 255, 0.3);
+    /* Blue glow */
+    --glass-border: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+    border: 2px solid var(--background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Text Selection */
+::selection {
+    background: var(--primary-color);
+    color: #000;
+}
+
+/* Focus Outline */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--background-color);
     color: var(--text-primary);
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%); /* Subtle gradient background */
+    background-image: url('../assets/images/tron_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 .container {
@@ -28,13 +72,17 @@ body {
     text-align: center;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 10px 0;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 h1 {
-    color: var(--accent-color);
-    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-size: 3rem;
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
 
 h2 {
@@ -51,14 +99,18 @@ h2 {
     margin-bottom: 30px;
 }
 
-.player-section, .computer-section {
+.player-section,
+.computer-section {
     flex: 1;
     min-width: 300px;
     background-color: var(--surface-color);
-    border-radius: 10px;
-    padding: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
     margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .vs {
@@ -78,7 +130,8 @@ h2 {
     background-color: #000;
 }
 
-#webcam, #output-canvas {
+#webcam,
+#output-canvas {
     position: absolute;
     left: 0;
     top: 0;
@@ -177,9 +230,19 @@ h2 {
 
 /* Animation for result */
 @keyframes pop {
-    0% { transform: scale(0.8); opacity: 0; }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .pop {
@@ -191,7 +254,7 @@ h2 {
     .game-container {
         flex-direction: column;
     }
-    
+
     .vs {
         margin: 20px 0;
     }

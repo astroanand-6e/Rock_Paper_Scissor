@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,67 +11,66 @@
     <meta name="theme-color" content="#2e7d32">
     <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <div class="sticky-cta-container reveal-on-scroll">
         <button id="play-btn-sticky" class="primary-btn">Start Challenge</button>
     </div>
 
     <div class="floating-elements">
-        <!-- Floating elements will be added dynamically via JavaScript -->
+        <div class="floating rock" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
+        <div class="floating paper" style="top: 20%; right: 15%; animation-delay: 2s;"></div>
+        <div class="floating scissors" style="top: 60%; left: 20%; animation-delay: 4s;"></div>
+        <div class="floating rock" style="top: 70%; right: 10%; animation-delay: 6s;"></div>
+        <div class="floating paper" style="top: 40%; left: 50%; animation-delay: 8s;"></div>
     </div>
 
     <div class="landing-container">
         <header class="hero-section">
-            <h1>Rock Paper Scissors!</h1>
-            <p class="tagline">Classic Game, Modern Style!</p>
+            <h1>Rock Paper Scissor GRID</h1>
+            <p class="tagline">Experience the Future of Gaming with AI Hand Recognition</p>
         </header>
 
         <section class="rules-section reveal-on-scroll">
-            <h3>How to Play: The Rules of Engagement</h3>
+            <h3>How to Play</h3>
             <div class="rules-visual">
                 <div class="rule-row">
                     <div class="rule-comparison">
-                        <img src="assets/images/Scissor_HG.png" alt="Scissors Hand Gesture" class="hand-gesture-img">
-                        <span class="vs-text">vs.</span>
-                        <img src="assets/images/paper_HG.png" alt="Paper Hand Gesture" class="hand-gesture-img">
+                        <img src="assets/images/Rock_HG.png" alt="Rock" class="hand-gesture-img">
+                        <span class="vs-text">vs</span>
+                        <img src="assets/images/Scissor_HG.png" alt="Scissors" class="hand-gesture-img">
                     </div>
-                    <span class="arrow-text">➞</span>
                     <div class="rule-winner">
-                        <img src="assets/images/Scissor_HG.png" alt="Scissors Hand Gesture" class="hand-gesture-img">
-                        <span class="wins-text">Wins</span>
+                        <span class="wins-text">Rock Wins</span>
                     </div>
                 </div>
                 <div class="rule-row">
                     <div class="rule-comparison">
-                        <img src="assets/images/paper_HG.png" alt="Paper Hand Gesture" class="hand-gesture-img">
-                        <span class="vs-text">vs.</span>
-                        <img src="assets/images/Rock_HG.png" alt="Rock Hand Gesture" class="hand-gesture-img">
+                        <img src="assets/images/paper_HG.png" alt="Paper" class="hand-gesture-img">
+                        <span class="vs-text">vs</span>
+                        <img src="assets/images/Rock_HG.png" alt="Rock" class="hand-gesture-img">
                     </div>
-                    <span class="arrow-text">➞</span>
                     <div class="rule-winner">
-                        <img src="assets/images/paper_HG.png" alt="Paper Hand Gesture" class="hand-gesture-img">
-                        <span class="wins-text">Wins</span>
+                        <span class="wins-text">Paper Wins</span>
                     </div>
                 </div>
                 <div class="rule-row">
                     <div class="rule-comparison">
-                        <img src="assets/images/Rock_HG.png" alt="Rock Hand Gesture" class="hand-gesture-img">
-                        <span class="vs-text">vs.</span>
-                        <img src="assets/images/Scissor_HG.png" alt="Scissors Hand Gesture" class="hand-gesture-img">
+                        <img src="assets/images/Scissor_HG.png" alt="Scissors" class="hand-gesture-img">
+                        <span class="vs-text">vs</span>
+                        <img src="assets/images/paper_HG.png" alt="Paper" class="hand-gesture-img">
                     </div>
-                    <span class="arrow-text">➞</span>
                     <div class="rule-winner">
-                        <img src="assets/images/Rock_HG.png" alt="Rock Hand Gesture" class="hand-gesture-img">
-                        <span class="wins-text">Wins</span>
+                        <span class="wins-text">Scissors Wins</span>
                     </div>
                 </div>
             </div>
-            <ol class="gameplay-steps">
-                <li>Choose Rock, Paper, or Scissors by clicking the respective button.</li>
-                <li>Click "Start Round" to see the computer's choice.</li>
-                <li>Win rounds to increase your score and beat the computer!</li>
-                <li>First to win the selected number of rounds wins the game!</li>
-            </ol>
+
+            <div class="gameplay-steps">
+                <p>1. Allow camera access to play with gestures.</p>
+                <p>2. Show your move to the camera or click the buttons.</p>
+                <p>3. Beat the AI to win the match!</p>
+            </div>
         </section>
 
         <section class="game-options reveal-on-scroll">
@@ -92,4 +92,5 @@
 
     <script src="js/landing.js"></script>
 </body>
+
 </html>
